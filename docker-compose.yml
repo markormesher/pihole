@@ -1,0 +1,23 @@
+version: "3.3"
+
+services:
+
+  pihole:
+    build: ./pihole
+    restart: always
+    ports:
+      - 53:53/tcp
+      - 53:53/udp
+      - 67:67/udp
+      - 80:80/tcp
+      - 443:443/tcp
+    environment:
+      TZ: Etc/UTC
+      WEBPASSWORD: ""
+    volumes:
+      - pihole-data:/etc/pihole/
+      - pihole-dnsmasq:/etc/dnsmasq.d/
+
+volumes:
+  pihole-data: {}
+  pihole-dnsmasq: {}
