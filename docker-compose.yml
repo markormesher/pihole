@@ -13,11 +13,3 @@ services:
       - 443:443/tcp
     environment:
       TZ: Etc/UTC
-      WEBPASSWORD: ""
-    volumes:
-      - pihole-data:/etc/pihole/
-      - pihole-dnsmasq:/etc/dnsmasq.d/
-
-volumes:
-  pihole-data: {}
-  pihole-dnsmasq: {}
